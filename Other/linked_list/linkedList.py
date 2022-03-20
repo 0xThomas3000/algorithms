@@ -92,3 +92,9 @@ class LinkedList:
     a.prev.next = a.next
     a.next.prev = a.prev
     return a
+
+  def print(self):
+    temp = self.start
+    while(temp != None):
+      print(temp.data)
+      temp = temp.next
