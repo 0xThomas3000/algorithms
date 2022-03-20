@@ -38,3 +38,17 @@ class LinkedList:
     b.prev = a
     b.next = c
     c.prev = b
+
+  def insertBefore(self, el_add, el_pre):
+    c = Node(self.search(el_pre))
+    if (c == None):
+      return
+    if (c == self.start):
+      self.insertBeg(el_add)
+      return
+    b = Node(el_add)
+    a = c.prev
+    a.next = b
+    b.prev = a
+    b.next = c
+    c.prev = b
