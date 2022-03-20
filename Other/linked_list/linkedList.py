@@ -24,3 +24,17 @@ class LinkedList:
     self.end.next = newNode
     newNode.prev = self.end
     self.end = self.end.next
+
+  def insertAfter(self, el_add, el_pre):
+    a = Node(self.search(el_pre))
+    if (a == None):
+      return
+    if (a == self.end):
+      self.insertEnd(el_add)
+      return
+    b = Node(el_add)
+    c = a.next
+    a.next = b
+    b.prev = a
+    b.next = c
+    c.prev = b
