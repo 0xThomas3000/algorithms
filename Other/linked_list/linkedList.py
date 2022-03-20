@@ -65,3 +65,16 @@ class LinkedList:
     self.start = self.start.next
     self.start.prev = None
     return y
+
+  def deleteEnd(self):
+    if (self.start == None):
+      return None
+    if (self.start == self.end):
+      x = self.start
+      self.start = None
+      self.end = None
+      return x
+    y = self.end
+    self.end = self.end.prev
+    self.end.next = None
+    return y
