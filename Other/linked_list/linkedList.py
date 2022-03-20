@@ -52,3 +52,16 @@ class LinkedList:
     b.prev = a
     b.next = c
     c.prev = b
+
+  def deleteBeg(self):
+    if (self.start == None):
+      return None
+    if (self.start == self.end):
+      x = self.start
+      self.start = None
+      self.end = None
+      return x
+    y = self.start
+    self.start = self.start.next
+    self.start.prev = None
+    return y
