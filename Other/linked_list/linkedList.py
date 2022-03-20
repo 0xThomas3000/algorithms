@@ -78,3 +78,17 @@ class LinkedList:
     self.end = self.end.prev
     self.end.next = None
     return y
+
+  def del_search(self, x):
+    a = Node(self.search(x))
+    if (a == None):
+      return None
+    if (a == self.start):
+      y = self.deleteBeg()
+      return y
+    if (a == self.end):
+      z = Node(self.deleteEnd())
+      return z
+    a.prev.next = a.next
+    a.next.prev = a.prev
+    return a
